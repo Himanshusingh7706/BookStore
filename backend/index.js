@@ -20,6 +20,10 @@ const URI = process.env.MongoDBURI;
 app.use("/book", bookRoute);
 app.use("/user", userRoute);
 
+app.use("/", (req, res, next) => {
+  res.send("Book Store Server is running");
+});
+
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
